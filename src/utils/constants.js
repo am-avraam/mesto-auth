@@ -14,3 +14,19 @@ export const apiConfig = {
     'Content-Type': 'application/json',
   },
 }
+
+export const authApiConfig = {
+  baseUrl: 'https://auth.nomoreparties.co',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+}
+
+export const initFormState = {
+  email: '',
+  password: '',
+}
+
+export const succedRegister = 'Вы успешно зарегистрировались!'
+export const failedAuth = 'Что-то пошло не так!\n' +
+  'Попробуйте ещё раз.'

@@ -1,9 +1,9 @@
 import React, { useContext} from 'react';
 import editAva from '../images/profile/editAva.svg'
-import Card from "./Card";
+import {Card} from "./index";
 import {UserContext} from "../contexts/CurrentUserContext";
 
-const Main = ({cards, onEditProfile, onAddPlace, onEditAvatar, onCardClick, onCardLike, onCardDelete}) => {
+export const Main = ({cards, onEditProfile, onAddPlace, onEditAvatar, onCardClick, onCardLike, onCardDelete}) => {
 
     const currentUser = useContext(UserContext)
 
@@ -33,4 +33,3 @@ const Main = ({cards, onEditProfile, onAddPlace, onEditAvatar, onCardClick, onCa
     );
 };
 
-export default Main;

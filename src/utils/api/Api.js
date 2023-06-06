@@ -5,6 +5,8 @@ class Api {
     this._headers = options.headers
   }
 
+
+
   _getResponseData(res) {
     if (!res.ok) {
       return Promise.reject(`Ошибка: ${res.status}`)
@@ -12,6 +14,14 @@ class Api {
     return res.json()
   }
 
+
+  async getUser() {
+    const response = await fetch(this._baseUrl + '/users/me', {
+      headers: this._headers,
+    })
+
+    return this._getResponseData(response)
+  }
   async getUser() {
     const response = await fetch(this._baseUrl + '/users/me', {
       headers: this._headers,
@@ -55,22 +65,7 @@ class Api {
     return this._getResponseData(response)
   }
 
-  // likeCard = async (cardId) => {
-  //   const response = await fetch(this._baseUrl + `/cards/${cardId}/likes`, {
-  //     method: 'PUT',
-  //     headers: this._headers,
-  //   })
-  //
-  //   return this._getResponseData(response)
-  // }
-  //
-  // deleteLikeCard = async (cardId) => {
-  //   const response = await fetch(this._baseUrl + `/cards/${cardId}/likes`, {
-  //     method: 'DELETE',
-  //     headers: this._headers,
-  //   })
-  //   return this._getResponseData(response)
-  // }
+
 
   changeLikeCardStatus = async(cardId, status) => {
     const response = await fetch(this._baseUrl + `/cards/${cardId}/likes`, {

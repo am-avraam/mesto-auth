@@ -25,3 +25,17 @@
     left: calc(50% - 282px / 2);
   }
 }
+
+.popup-infotooltip__container {
+  padding: 60px 36px;
+  box-sizing: border-box;
+}
+
+.popup-infotooltip__title {
+  font-family: 'Inter';
+  margin: 32px 0 0 0;
+  text-align: center;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 29px;
+}

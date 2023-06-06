@@ -1,9 +1,13 @@
-import React from 'react';
+import React, {useRef} from 'react';
 
-const ImagePopup = ({card, onClose}) => {
+export const ImagePopup = ({card, onClose}) => {
+  const popupRef = useRef()
+  function closeByOutClick(e) {
+    if (e.target === popupRef.current) onClose()
+  }
 
     return (
-    <div className={`popup popup_overlook ${ card && 'popup_opened'}`}>
+    <div ref={popupRef} onClick={closeByOutClick} className={`popup popup_overlook ${ card && 'popup_opened'}`}>
         <div className="popup__wrapper">
             <button onClick={onClose} type="button"
                     className="popup__button popup__button_close popup__button_close-overlook"></button>
@@ -14,4 +18,3 @@ const ImagePopup = ({card, onClose}) => {
     );
 };
 
-export default ImagePopup;

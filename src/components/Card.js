@@ -1,10 +1,10 @@
 import React, {useContext} from 'react';
 import {UserContext} from "../contexts/CurrentUserContext";
 
-const Card = ({card, onCardClick, onCardLike, onCardDelete}) => {
+export const Card = ({card, onCardClick, onCardLike, onCardDelete}) => {
 
 const currentUser = useContext(UserContext)
-
+  // eslint-disable-next-line
     const {name, link, owner, _id, likes} = card
     const isOwn = owner._id === currentUser._id;
     const isLiked = likes.some(i => i._id === currentUser._id);
@@ -38,4 +38,3 @@ const currentUser = useContext(UserContext)
     );
 };
 
-export default Card;

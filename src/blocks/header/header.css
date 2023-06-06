@@ -2,6 +2,9 @@
   max-width: 880px;
   margin: 0 auto;
   margin-top: 45px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .header::after {
@@ -23,4 +26,33 @@
   .header {
   margin-top: 28px;
   }
+}
+
+.header__link {
+  color: white;
+  text-decoration: none;
+  background: transparent;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: right;
+  display: inline-block;
+  margin: auto 0 0 0;
+}
+
+.header__link:hover {
+  opacity: 0.6;
+}
+
+.header__email {
+  display: block;
+  color: white;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  margin: auto 24px 0 auto;
+  /*margin-left: auto;*/
+}
+
+.header__link-action_out {
+  color: #A9A9A9;
 }

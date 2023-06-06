@@ -1,7 +1,7 @@
 import React, {useRef} from 'react';
-import PopupWithForm from "./PopupWithForm";
+import {PopupWithForm} from "./index";
 
-const AddPlacePopup = ({onAddCard, isOpen, onClose, }) => {
+export const AddPlacePopup = ({onAddCard, isOpen, onClose, }) => {
 
     const placeNameRef = useRef()
     const placeLinkRef = useRef()
@@ -43,5 +43,3 @@ const AddPlacePopup = ({onAddCard, isOpen, onClose, }) => {
         </PopupWithForm>
     );
 };
-
-export default AddPlacePopup;

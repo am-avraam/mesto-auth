@@ -1,8 +1,14 @@
-import React from 'react';
+import React, {useRef} from 'react';
 
-const PopupWithForm = ({onSubmit, title, name, children, buttonText, isOpen, onClose}) => {
+export const PopupWithForm = (({closeByOutClick, onSubmit, title, name, children, buttonText, isOpen, onClose}) => {
+  const popupRef = useRef()
+
+  function closeByOutClick(e) {
+    if (e.target === popupRef.current) onClose()
+  }
+
     return (
-        <div
+        <div ref={popupRef} onClick={closeByOutClick}
             className={`popup popup-${name} ${isOpen && 'popup_opened'}`}>
             <div className="popup__container">
                 <h2 className="popup__title">{title}</h2>
@@ -16,6 +22,4 @@ const PopupWithForm = ({onSubmit, title, name, children, buttonText, isOpen, onC
 
         </div>
     );
-};
-
-export default PopupWithForm;
+})
